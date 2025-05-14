@@ -1,19 +1,22 @@
 import fs from "fs";
 import path from "path";
 
-const postsDirectory = path.join(process.cwd(), "posts"); // Asegúrate de que la ruta sea correcta
+const postsDirectory = path.join(process.cwd(), "posts");
 
 export function getPosts() {
-  const fileNames = fs.readdirSync(postsDirectory); // Obtén todos los nombres de los archivos en el directorio 'posts'
-  const posts = fileNames.map((fileName) => {
-    const fullPath = path.join(postsDirectory, fileName); // Obtén la ruta completa del archivo
-    const fileContents = fs.readFileSync(fullPath, "utf8"); // Lee el contenido del archivo
+  if (!fs.existsSync(postsDirectory)) {
+    return []; // o podrías lanzar un error personalizado si prefieres
+  }
 
-    // Aquí puedes extraer el 'title' de alguna manera. Suponiendo que sea el nombre del archivo:
+  const fileNames = fs.readdirSync(postsDirectory);
+  const posts = fileNames.map((fileName) => {
+    const fullPath = path.join(postsDirectory, fileName);
+    const fileContents = fs.readFileSync(fullPath, "utf8");
     return {
-      slug: fileName.replace(/\.md$/, ""), // Quita la extensión del archivo para obtener el slug
-      title: fileContents.split("\n")[0], // Suponiendo que la primera línea es el título
+      fileName,
+      content: fileContents,
     };
   });
+
   return posts;
 }

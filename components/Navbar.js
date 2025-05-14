@@ -21,6 +21,13 @@ const Navbar = () => (
 
       <div className="collapse navbar-collapse" id="navbarNavDropdown">
         <ul className="navbar-nav ms-auto">
+
+        <li className="nav-item">
+            <Link href="/" className="nav-link">
+              Home
+            </Link>
+          </li>
+
           <li className="nav-item">
             <Link href="/blog" className="nav-link">
               Blog
