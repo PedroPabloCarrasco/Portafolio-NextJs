@@ -19,17 +19,24 @@ const HomePage = () => (
               />
             </div>
             <div className="col-md-8">
-              <h1>Pedro Pablo Carrasco</h1>
-              <h4>Desarrollador Fullstack Junior</h4>
-              <p>
-                Soy un apasionado por el desarrollo web con experiencia en
-                tecnologías modernas. Me gusta construir soluciones útiles y
-                funcionales para personas y negocios.
-              </p>
-              <a href="/contrato" className="btn btn-primary mt-2">
-                Contrátame
-              </a>
-            </div>
+  <h1>Pedro Pablo Carrasco</h1>
+  <h4>Desarrollador Fullstack Junior</h4>
+  <p>
+    Soy un apasionado por el desarrollo web con experiencia en
+    tecnologías modernas. Me gusta construir soluciones útiles y
+    funcionales para personas y negocios.
+  </p>
+
+  <div className="mt-3 d-flex gap-3 flex-wrap">
+    <a href="/contrato" className="btn btn-primary btn-lg">
+      Contrátame
+    </a>
+    <a href="/proyectos" className="btn btn-outline-primary btn-lg">
+      Portafolio
+    </a>
+  </div>
+</div>
+
           </div>
         </div>
       </div>
