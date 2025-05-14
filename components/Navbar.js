@@ -38,6 +38,12 @@ const Navbar = () => (
               GitHub
             </Link>
           </li>
+
+          <li className="nav-item">
+            <Link href="/behance" className="nav-link">
+              Behance
+            </Link>
+          </li>
         </ul>
       </div>
     </div>
